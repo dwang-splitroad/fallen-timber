@@ -29,7 +29,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const isTransparent = (isHome || pathname === "/about" || pathname === "/services") && !scrolled
+  const isTransparent = (isHome || pathname === "/about" || pathname === "/services" || pathname === "/contact") && !scrolled
 
   return (
     <header

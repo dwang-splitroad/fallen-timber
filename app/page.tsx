@@ -193,7 +193,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" asChild>
               <Link href="/contact">
-                Get a Free Quote
+                Get a Quote
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

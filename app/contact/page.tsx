@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { Phone, Mail, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Phone, Mail, MapPin, ChevronDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
 
@@ -33,15 +34,30 @@ const contactInfo = [
 export default function ContactPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-primary">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center text-primary-foreground">
-          <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl text-balance">
+      {/* Hero — full-screen background */}
+      <section className="relative h-[100dvh] min-h-[600px] -mt-[72px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/fallen-timber/gallery/IMG_0321-scaled.jpg"
+            alt="Fallen Timber rustic wood background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/55" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white">
+          <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance drop-shadow-lg">
             Contact Us
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
+          <p className="mt-6 text-lg leading-relaxed text-white/90 max-w-2xl mx-auto text-pretty drop-shadow">
             Ready to get started? Reach out to us for a free estimate or to discuss your tree service needs.
           </p>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+          <ChevronDown className="h-8 w-8" />
         </div>
       </section>
 
