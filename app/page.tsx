@@ -1,32 +1,34 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, TreeDeciduous, Axe, Layers, CircleDot } from "lucide-react"
+import { ArrowRight, TreeDeciduous, Axe, Leaf, CircleDot } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-
 const services = [
   {
     title: "Tree Removal",
     description: "Safe and efficient removal of unwanted or hazardous trees from your property.",
     icon: TreeDeciduous,
+    image: "/fallen-timber/gallery/fallen-timber-3.jpg",
     href: "/services#tree-removal",
   },
   {
     title: "Tree Topping",
     description: "Professional tree topping to manage height and promote healthy growth.",
     icon: Axe,
+    image: "/fallen-timber/gallery/DJI_0033-scaled.jpg",
     href: "/services#tree-topping",
   },
   {
     title: "Tree Chipping",
     description: "On-site chipping with mulch for your landscaping or full debris hauling — your choice.",
-    icon: Layers,
+    icon: Leaf,
+    image: "/fallen-timber/gallery/fallen-timber-27.jpg",
     href: "/services#tree-chipping",
   },
   {
     title: "Stump Grinding",
     description: "Complete stump removal to reclaim your yard space.",
     icon: CircleDot,
+    image: "/fallen-timber/gallery/fallen-timber-2020.jpg",
     href: "/services#stump-grinding",
   },
 ]
@@ -112,22 +114,33 @@ export default function HomePage() {
 
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
-              <Card key={service.title} className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <service.icon className="h-6 w-6" />
+              <div key={service.title} className="group relative overflow-hidden rounded-xl min-h-[280px] flex flex-col justify-end hover:shadow-xl transition-shadow cursor-pointer">
+                {/* Background image */}
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Gradient overlay — lighter at top, darker at bottom for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+
+                {/* Content */}
+                <div className="relative z-10 p-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 text-white mb-3">
+                    <service.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-4 font-serif text-xl font-semibold text-foreground">{service.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                  <h3 className="font-serif text-xl font-semibold text-white">{service.title}</h3>
+                  <p className="mt-1 text-sm text-white/80 leading-relaxed">{service.description}</p>
                   <Link
                     href={service.href}
-                    className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors"
+                    className="mt-3 inline-flex items-center text-sm font-medium text-white/90 hover:text-white transition-colors"
                   >
                     Learn more
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
 

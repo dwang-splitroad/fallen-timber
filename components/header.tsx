@@ -101,7 +101,7 @@ export function Header() {
             <Phone className="h-4 w-4" />
             <span>(574) 551-2585</span>
           </a>
-          <Button className="bg-black text-white hover:bg-black/80" asChild>
+          <Button className="bg-white text-primary hover:bg-white/90" asChild>
             <Link href="/contact">Get a Quote</Link>
           </Button>
         </div>
@@ -129,7 +129,7 @@ export function Header() {
                 <Phone className="h-5 w-5" />
                 <span>(574) 551-2585</span>
               </a>
-              <Button className="w-full mt-3 bg-black text-white hover:bg-black/80" asChild>
+              <Button className="w-full mt-3 bg-white text-primary hover:bg-white/90" asChild>
                 <Link href="/contact">Get a Quote</Link>
               </Button>
             </div>
