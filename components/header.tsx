@@ -48,7 +48,7 @@ export function Header() {
               alt="Fallen Timber"
               width={160}
               height={48}
-              className="h-12 w-auto object-contain"
+              className="h-9 sm:h-12 w-auto object-contain"
               priority
             />
           </Link>

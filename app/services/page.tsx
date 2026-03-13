@@ -77,7 +77,7 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col">
       {/* Hero — full-screen background */}
-      <section className="relative h-screen -mt-[72px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100dvh] min-h-[600px] -mt-[72px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/fallen-timber/fallen-timber-background.JPG"
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white">
-          <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance drop-shadow-lg">
+          <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl text-balance drop-shadow-lg">
             Comprehensive Tree Services in Warsaw and Beyond
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-white/90 max-w-2xl mx-auto text-pretty drop-shadow">

@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero — full-screen wood background */}
-      <section className="relative h-screen -mt-[72px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100dvh] min-h-[600px] -mt-[72px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/fallen-timber/wood-background-1-scaled-e1700515191660.jpg"
@@ -116,8 +116,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image */}
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg lg:order-first">
+            {/* Image — first on mobile, left on desktop */}
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg order-first lg:order-first">
               <Image
                 src="/fallen-timber/gallery/fallen-timber-3.jpg"
                 alt="Fallen Timber equipment in action"

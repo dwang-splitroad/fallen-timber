@@ -18,10 +18,10 @@ const services = [
     href: "/services#tree-topping",
   },
   {
-    title: "Tree Trimming",
-    description: "Keep your trees healthy and beautiful with our professional trimming services.",
+    title: "Tree Chipping",
+    description: "On-site chipping with mulch for your landscaping or full debris hauling — your choice.",
     icon: Layers,
-    href: "/services#tree-trimming",
+    href: "/services#tree-chipping",
   },
   {
     title: "Stump Grinding",
@@ -35,7 +35,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section — full-screen Vimeo background video */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Vimeo background video */}
         <div className="absolute inset-0 overflow-hidden">
           <iframe
