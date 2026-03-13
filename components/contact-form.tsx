@@ -25,16 +25,41 @@ const services = [
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [selectedService, setSelectedService] = useState("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    
-    setIsLoading(false)
-    setIsSubmitted(true)
+
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      service: selectedService,
+      desiredDate: (form.elements.namedItem("desiredDate") as HTMLInputElement).value,
+      desiredTime: (form.elements.namedItem("desiredTime") as HTMLInputElement).value,
+      address: (form.elements.namedItem("address") as HTMLInputElement).value,
+      details: (form.elements.namedItem("details") as HTMLTextAreaElement).value,
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+
+      if (res.ok) {
+        setIsSubmitted(true)
+      } else {
+        alert("Something went wrong. Please try again or call us directly.")
+      }
+    } catch {
+      alert("Something went wrong. Please try again or call us directly.")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   if (isSubmitted) {
@@ -100,7 +125,7 @@ export function ContactForm() {
       {/* Select Service */}
       <div className="space-y-2">
         <Label htmlFor="service">Select Service</Label>
-        <Select name="service" required>
+        <Select name="service" required onValueChange={setSelectedService}>
           <SelectTrigger id="service">
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
