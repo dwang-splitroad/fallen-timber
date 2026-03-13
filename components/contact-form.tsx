@@ -81,7 +81,7 @@ export function ContactForm() {
           name="phone"
           type="tel"
           required
-          placeholder="574-555-1234"
+          placeholder="(xxx) xxx-xxxx"
         />
       </div>
 

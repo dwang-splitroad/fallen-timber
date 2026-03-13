@@ -43,12 +43,21 @@ export function Header() {
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
+            {/* Full logo on sm+, icon-only crop on mobile */}
+            <Image
+              src="/fallen-timber/logo/Fallen-Timber-Logo.png"
+              alt="Fallen Timber"
+              width={200}
+              height={60}
+              className="hidden sm:block h-11 w-auto object-contain"
+              priority
+            />
             <Image
               src="/fallen-timber/logo/Fallen-Timber-white.png"
               alt="Fallen Timber"
-              width={160}
-              height={48}
-              className="h-9 sm:h-12 w-auto object-contain"
+              width={40}
+              height={40}
+              className="block sm:hidden h-9 w-9 object-contain"
               priority
             />
           </Link>
@@ -86,11 +95,11 @@ export function Header() {
         {/* Phone CTA */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 lg:items-center">
           <a
-            href="tel:+15745551234"
+            href="tel:+15745512585"
             className="flex items-center gap-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
           >
             <Phone className="h-4 w-4" />
-            <span>(574) 555-1234</span>
+            <span>(574) 551-2585</span>
           </a>
           <Button className="bg-black text-white hover:bg-black/80" asChild>
             <Link href="/contact">Get a Quote</Link>
@@ -114,11 +123,11 @@ export function Header() {
             ))}
             <div className="pt-4 border-t border-primary-foreground/20 mt-4">
               <a
-                href="tel:+15745551234"
+                href="tel:+15745512585"
                 className="flex items-center gap-2 py-2 text-base font-medium text-primary-foreground/80"
               >
                 <Phone className="h-5 w-5" />
-                <span>(574) 555-1234</span>
+                <span>(574) 551-2585</span>
               </a>
               <Button className="w-full mt-3 bg-black text-white hover:bg-black/80" asChild>
                 <Link href="/contact">Get a Quote</Link>

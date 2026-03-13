@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 
 const navigation = {
   main: [
@@ -23,23 +23,6 @@ export function Footer() {
             <p className="mt-4 text-sm text-primary-foreground/80 leading-relaxed">
               Your trusted local partner for all tree-related needs in Warsaw, Indiana and surrounding areas.
             </p>
-            {/* Social Links */}
-            <div className="mt-6 flex gap-4">
-              <a
-                href="#"
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -65,40 +48,32 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li>
                 <a
-                  href="tel:+15745551234"
+                  href="tel:+15745512585"
                   className="flex items-start gap-3 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   <Phone className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>(574) 555-1234</span>
+                  <span>(574) 551-2585</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@fallentimber.com"
+                  href="mailto:clayton@fallen-timber.com"
                   className="flex items-start gap-3 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   <Mail className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>info@fallentimber.com</span>
+                  <span>clayton@fallen-timber.com</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="https://maps.google.com/?q=4964+W+Lakeview+Park+Dr,+Warsaw,+IN+46580"
+                  href="https://maps.google.com/?q=4964+W.+Lakeview+Park+Dr.,+Warsaw,+IN+46580"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>4964 W Lakeview Park Dr<br />Warsaw, IN 46580</span>
+                  <span>4964 W. Lakeview Park Dr.<br />Warsaw, IN 46580</span>
                 </a>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
-                <Clock className="h-4 w-4 mt-0.5 shrink-0" />
-                <div>
-                  <p>Mon - Fri: 7:00 AM - 6:00 PM</p>
-                  <p>Sat: 8:00 AM - 4:00 PM</p>
-                  <p>Sun: Closed</p>
-                </div>
               </li>
             </ul>
           </div>

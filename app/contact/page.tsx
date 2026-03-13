@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Phone, Mail, MapPin } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
 
 export const metadata: Metadata = {
@@ -12,28 +12,23 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "(574) 555-1234",
-    href: "tel:+15745551234",
+    content: "(574) 551-2585",
+    href: "tel:+15745512585",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "info@fallentimber.com",
-    href: "mailto:info@fallentimber.com",
+    content: "clayton@fallen-timber.com",
+    href: "mailto:clayton@fallen-timber.com",
   },
   {
     icon: MapPin,
     title: "Location",
-    content: "4964 W Lakeview Park Dr, Warsaw, IN 46580",
-    href: "https://maps.google.com/?q=4964+W+Lakeview+Park+Dr,+Warsaw,+IN+46580",
+    content: "4964 W. Lakeview Park Dr., Warsaw, IN 46580",
+    href: "https://maps.google.com/?q=4964+W.+Lakeview+Park+Dr.,+Warsaw,+IN+46580",
   },
 ]
 
-const businessHours = [
-  { day: "Monday - Friday", hours: "7:00 AM - 6:00 PM" },
-  { day: "Saturday", hours: "8:00 AM - 4:00 PM" },
-  { day: "Sunday", hours: "Closed" },
-]
 
 export default function ContactPage() {
   return (
@@ -101,46 +96,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Business Hours */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 font-serif">
-                    <Clock className="h-5 w-5 text-primary" />
-                    Business Hours
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <dl className="space-y-2">
-                    {businessHours.map((item) => (
-                      <div key={item.day} className="flex justify-between">
-                        <dt className="text-muted-foreground">{item.day}</dt>
-                        <dd className="font-medium text-foreground">{item.hours}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </CardContent>
-              </Card>
 
-              {/* Social Links */}
-              <div>
-                <h3 className="font-medium text-foreground">Follow Us</h3>
-                <div className="mt-3 flex gap-4">
-                  <a
-                    href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -162,12 +118,12 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Fallen Timber Location - 4964 W Lakeview Park Dr, Warsaw, IN 46580"
+              title="Fallen Timber Location - 4964 W. Lakeview Park Dr., Warsaw, IN 46580"
               className="absolute inset-0"
             />
           </div>
           <p className="text-center text-muted-foreground mt-4">
-            4964 W Lakeview Park Dr, Warsaw, IN 46580
+            4964 W. Lakeview Park Dr., Warsaw, IN 46580
           </p>
         </div>
       </section>

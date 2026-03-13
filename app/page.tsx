@@ -187,7 +187,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground/10" asChild>
-              <a href="tel:+15745551234">Call (574) 555-1234</a>
+              <a href="tel:+15745512585">Call (574) 551-2585</a>
             </Button>
           </div>
         </div>
