@@ -1,66 +1,74 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, TreeDeciduous, Axe, Layers, CircleDot, CheckCircle2, ChevronDown } from "lucide-react"
+import { ArrowRight, TreeDeciduous, Axe, Leaf, CircleDot, CheckCircle2, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Professional tree removal, tree topping, tree trimming, and stump grinding services in Warsaw, Indiana.",
+  description: "Professional tree removal, tree topping, tree chipping, and stump grinding services in Warsaw, Indiana.",
 }
 
 const services = [
   {
     id: "tree-removal",
     title: "Tree Removal",
-    description: "Safe and efficient removal of unwanted or hazardous trees from your property. Our experienced team uses professional equipment and techniques to ensure safe removal while protecting your property.",
+    subtitle: "Tailored Solutions for Every Tree",
+    description: "From small pine trees to towering hardwoods, no tree is too challenging for our expert team. Utilizing our highly versatile lift, we can reach even the most difficult locations without the need for a costly and hazardous tree climber. Whether trees loom over your house, shed, pool, or intertwine with other trees, we have the expertise to navigate these situations safely and efficiently.",
     icon: TreeDeciduous,
+    image: "/fallen-timber/gallery/fallen-timber-3.jpg",
     features: [
-      "Hazardous tree assessment",
-      "Safe removal techniques",
-      "Property protection measures",
-      "Complete debris cleanup",
-      "Emergency services available",
+      "Small to large tree removal",
+      "No tree climber required",
+      "Roof, shed & pool clearance",
+      "Complex & intertwined trees",
+      "Safe, efficient techniques",
     ],
   },
   {
     id: "tree-topping",
     title: "Tree Topping",
-    description: "Professional tree topping services to manage tree height and promote healthy growth. We carefully assess each tree to determine the best approach for long-term health and aesthetics.",
+    subtitle: "Shaping Trees to Perfection",
+    description: "Our specialized lift excels in reaching tree tops, allowing us to shape trees according to your preferences. This is an excellent way to control overgrown trees, preventing them from encroaching on your roof, invading your pool, or causing other unwanted disruptions. Trust Fallen Timber for precision in tree topping to keep your landscape in check.",
     icon: Axe,
+    image: "/fallen-timber/gallery/DJI_0033-scaled.jpg",
     features: [
-      "Height management",
-      "Crown reduction",
-      "Storm damage prevention",
-      "Improved tree health",
-      "Enhanced property views",
+      "Precision crown shaping",
+      "Overgrowth control",
+      "Roof & pool clearance",
+      "Landscape improvement",
+      "Lift access to any height",
     ],
   },
   {
-    id: "tree-trimming",
-    title: "Tree Trimming",
-    description: "Keep your trees healthy, safe, and looking their best with our professional trimming services. Proper pruning promotes growth, removes hazards, and enhances your property's appearance.",
-    icon: Layers,
+    id: "tree-chipping",
+    title: "Tree Chipping",
+    subtitle: "Mulch or Removal, Your Choice",
+    description: "After tree topping or removal, the resulting brush can be overwhelming. We offer on-site chipping, providing you with the option of mulch for your landscaping needs. Alternatively, we can efficiently haul away all debris, leaving your property clean and free from tree remnants.",
+    icon: Leaf,
+    image: "/fallen-timber/gallery/fallen-timber-27.jpg",
     features: [
-      "Crown shaping and thinning",
-      "Dead branch removal",
-      "Improved tree health",
-      "Enhanced property aesthetics",
-      "Storm damage prevention",
+      "On-site brush chipping",
+      "Fresh mulch for landscaping",
+      "Full debris hauling",
+      "Clean property finish",
+      "Available after any service",
     ],
   },
   {
     id: "stump-grinding",
     title: "Stump Grinding",
-    description: "Complete stump removal to reclaim your yard space and eliminate trip hazards. Our powerful equipment grinds stumps below ground level for a clean finish.",
+    subtitle: "Swift Removal of Stumps and Roots",
+    description: "Don't wait decades for a tree stump to naturally decompose. Our stump grinding services ensure swift removal, leaving your yard free from unsightly stumps and pesky roots. Count on Fallen Timber to handle this with ease, restoring your outdoor space to its full potential.",
     icon: CircleDot,
+    image: "/fallen-timber/gallery/fallen-timber-2020.jpg",
     features: [
-      "Below-ground grinding",
-      "Complete root removal",
+      "Swift stump removal",
+      "Root elimination",
       "Yard space restoration",
-      "Trip hazard elimination",
-      "Lawn-ready finish",
+      "No more eyesores",
+      "Full outdoor potential restored",
     ],
   },
 ]
@@ -83,10 +91,10 @@ export default function ServicesPage() {
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white">
           <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance drop-shadow-lg">
-            Our Services
+            Comprehensive Tree Services in Warsaw and Beyond
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-white/90 max-w-2xl mx-auto text-pretty drop-shadow">
-            Expert tree services tailored to your needs. At Fallen Timber, we understand the significance of well-maintained trees for the beauty and safety of your property.
+            At Fallen Timber, we stand as the premier provider of tree services in Warsaw and its surrounding areas. Our commitment to excellence is rooted in our state-of-the-art equipment and extensive knowledge, ensuring that we are well-equipped for any tree job imaginable.
           </p>
         </div>
 
@@ -95,32 +103,46 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Grid — 4×1 on desktop */}
       <section className="py-20 lg:py-28 bg-background">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => (
-              <Card key={service.id} id={service.id} className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <service.icon className="h-7 w-7" />
+              <Card key={service.id} id={service.id} className="group hover:shadow-lg transition-shadow overflow-hidden flex flex-col rounded-t-none pt-0 gap-0">
+                {/* Photo */}
+                <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-none">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors" />
+                </div>
+
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <service.icon className="h-6 w-6" />
                   </div>
-                  <h2 className="mt-5 font-serif text-2xl font-bold tracking-tight text-foreground">
+                  <h2 className="mt-4 font-serif text-xl font-bold tracking-tight text-foreground">
                     {service.title}
                   </h2>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                  <p className="mt-1 text-sm font-medium text-primary italic">
+                    {service.subtitle}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
-                  <ul className="mt-6 space-y-2.5">
+                  <ul className="mt-4 space-y-2 flex-1">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <li key={feature} className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                         <span className="text-foreground text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8">
-                    <Button asChild>
+                  <div className="mt-6">
+                    <Button className="w-full" asChild>
                       <Link href="/contact">
                         Get a Quote
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -141,7 +163,7 @@ export default function ServicesPage() {
             Need Help Deciding?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Not sure which service you need? Contact us for a free consultation and we will help you determine the best solution for your property.
+            Not sure which service you need? Contact us for a free consultation and we will help you determine the best solution for your property. Tree removal, topping, chipping, or stump grinding — we have you covered.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>

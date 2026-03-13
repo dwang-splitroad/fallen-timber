@@ -62,10 +62,10 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center text-white">
           <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance drop-shadow-lg">
-            Your Premier Tree Service in Warsaw, Indiana
+            Your Premier Tree Service<br />in Warsaw, Indiana!
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-white/90 max-w-2xl mx-auto text-pretty drop-shadow">
-            At Fallen Timber, our mission is to provide superior tree services. From tree removal to stump grinding, we have got you covered.
+            At Fallen Timber, our mission is to provide superior tree services.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
@@ -95,7 +95,7 @@ export default function HomePage() {
               Expert Tree Services Tailored to Your Needs
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              At Fallen Timber, we understand the significance of well-maintained trees for the beauty and safety of your property. Our seasoned team is dedicated to providing top-notch tree services in Warsaw, IN.
+              At Fallen Timber, we understand the significance of well-maintained trees for the beauty and safety of your property. Our seasoned team is dedicated to providing top-notch tree services in Warsaw, IN. Whether you need tree removal, tree topping, tree chipping, or stump grinding, we&apos;ve got you covered.
             </p>
           </div>
 
