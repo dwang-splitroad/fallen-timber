@@ -36,6 +36,17 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section — full-screen Vimeo background video */}
       <section className="relative h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Fallback/poster image shown while video loads */}
+        <div className="absolute inset-0">
+          <Image
+            src="/fallen-timber/gallery/fallen-timber.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
         {/* Vimeo background video */}
         <div className="absolute inset-0 overflow-hidden">
           <iframe
