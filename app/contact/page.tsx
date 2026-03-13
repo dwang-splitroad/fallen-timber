@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import { Phone, Mail, MapPin, ChevronDown } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Phone, Mail, MapPin } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 
 export const metadata: Metadata = {
@@ -30,37 +28,9 @@ const contactInfo = [
   },
 ]
 
-
 export default function ContactPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero — full-screen background */}
-      <section className="relative h-[100dvh] min-h-[600px] -mt-[72px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/fallen-timber/gallery/IMG_0321-scaled.jpg"
-            alt="Fallen Timber rustic wood background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/55" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white">
-          <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance drop-shadow-lg">
-            Contact Us
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-white/90 max-w-2xl mx-auto text-pretty drop-shadow">
-            Ready to get started? Reach out to us for a free estimate or to discuss your tree service needs.
-          </p>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
-          <ChevronDown className="h-8 w-8" />
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section className="py-20 lg:py-28 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -79,8 +49,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
-              {/* Contact Cards */}
+            <div className="space-y-8 lg:pt-14">
               <div>
                 <h2 className="font-serif text-2xl font-bold tracking-tight text-foreground">
                   Get in Touch
@@ -96,23 +65,17 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-medium text-foreground">{item.title}</h3>
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            {item.content}
-                          </a>
-                        ) : (
-                          <p className="text-muted-foreground">{item.content}</p>
-                        )}
+                        <a
+                          href={item.href}
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {item.content}
+                        </a>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -124,7 +87,6 @@ export default function ContactPage() {
           <h2 className="font-serif text-2xl font-bold tracking-tight text-foreground text-center mb-8">
             Our Location
           </h2>
-          {/* Google Maps Embed */}
           <div className="relative aspect-[16/9] lg:aspect-[21/9] rounded-lg overflow-hidden bg-card border border-border">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.123456789!2d-85.8839!3d41.2378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE0JzE2LjAiTiA4NcKwNTMnMDIuMCJX!5e0!3m2!1sen!2sus!4v1699999999999&q=4964+W+Lakeview+Park+Dr,+Warsaw,+IN+46580"
