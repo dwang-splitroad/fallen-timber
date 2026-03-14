@@ -18,11 +18,11 @@ const services = [
     href: "/services#tree-topping",
   },
   {
-    title: "Tree Chipping",
+    title: "Tree Trimming",
     description: "On-site chipping with mulch for your landscaping or full debris hauling — your choice.",
     icon: Leaf,
     image: "/fallen-timber/gallery/fallen-timber-27.jpg",
-    href: "/services#tree-chipping",
+    href: "/services#tree-trimming",
   },
   {
     title: "Stump Grinding",
@@ -108,7 +108,7 @@ export default function HomePage() {
               Expert Tree Services Tailored to Your Needs
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              At Fallen Timber, we understand the significance of well-maintained trees for the beauty and safety of your property. Our seasoned team is dedicated to providing top-notch tree services in Warsaw, IN. Whether you need tree removal, tree topping, tree chipping, or stump grinding, we&apos;ve got you covered.
+              At Fallen Timber, we understand the significance of well-maintained trees for the beauty and safety of your property. Our seasoned team is dedicated to providing top-notch tree services in Warsaw, IN. Whether you need tree removal, tree topping, tree trimming, or stump grinding, we&apos;ve got you covered.
             </p>
           </div>
 

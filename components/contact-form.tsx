@@ -17,7 +17,7 @@ import { CheckCircle2 } from "lucide-react"
 const services = [
   { value: "tree-removal", label: "Tree Removal" },
   { value: "tree-topping", label: "Tree Topping" },
-  { value: "tree-chipping", label: "Tree Chipping" },
+  { value: "tree-trimming", label: "Tree Trimming" },
   { value: "stump-grinding", label: "Stump Grinding" },
   { value: "other", label: "Other / Not Sure" },
 ]

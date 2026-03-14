@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Professional tree removal, tree topping, tree chipping, and stump grinding services in Warsaw, Indiana.",
+  description: "Professional tree removal, tree topping, tree trimming, and stump grinding services in Warsaw, Indiana.",
 }
 
 const services = [
@@ -42,8 +42,8 @@ const services = [
     ],
   },
   {
-    id: "tree-chipping",
-    title: "Tree Chipping",
+    id: "tree-trimming",
+    title: "Tree Trimming",
     subtitle: "Mulch or Removal, Your Choice",
     description: "After tree topping or removal, the resulting brush can be overwhelming. We offer on-site chipping, providing you with the option of mulch for your landscaping needs. Alternatively, we can efficiently haul away all debris, leaving your property clean and free from tree remnants.",
     icon: Leaf,
@@ -163,7 +163,7 @@ export default function ServicesPage() {
             Need Help Deciding?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Not sure which service you need? Contact us for a free consultation and we will help you determine the best solution for your property. Tree removal, topping, chipping, or stump grinding — we have you covered.
+            Not sure which service you need? Contact us for a free consultation and we will help you determine the best solution for your property. Tree removal, topping, trimming, or stump grinding — we have you covered.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>

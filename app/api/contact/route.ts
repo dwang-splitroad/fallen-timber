@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     const serviceLabel: Record<string, string> = {
       "tree-removal": "Tree Removal",
       "tree-topping": "Tree Topping",
-      "tree-chipping": "Tree Chipping",
+          "tree-trimming": "Tree Trimming",
       "stump-grinding": "Stump Grinding",
       "other": "Other / Not Sure",
     }
