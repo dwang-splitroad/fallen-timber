@@ -44,16 +44,16 @@ const services = [
   {
     id: "tree-trimming",
     title: "Tree Trimming",
-    subtitle: "Mulch or Removal, Your Choice",
-    description: "After tree topping or removal, the resulting brush can be overwhelming. We offer on-site chipping, providing you with the option of mulch for your landscaping needs. Alternatively, we can efficiently haul away all debris, leaving your property clean and free from tree remnants.",
+    subtitle: "Keep Your Trees Healthy and Looking Their Best",
+    description: "Keep your trees healthy, safe, and looking their best with our professional trimming services. Proper pruning promotes growth, removes hazards, and enhances your property's appearance.",
     icon: Leaf,
     image: "/fallen-timber/gallery/fallen-timber-27.jpg",
     features: [
-      "On-site brush chipping",
-      "Fresh mulch for landscaping",
-      "Full debris hauling",
-      "Clean property finish",
-      "Available after any service",
+      "Crown shaping and thinning",
+      "Dead branch removal",
+      "Improved tree health",
+      "Enhanced property aesthetics",
+      "Storm damage prevention",
     ],
   },
   {

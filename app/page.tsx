@@ -19,7 +19,7 @@ const services = [
   },
   {
     title: "Tree Trimming",
-    description: "On-site chipping with mulch for your landscaping or full debris hauling — your choice.",
+    description: "Keep your trees healthy, safe, and looking their best with our professional trimming services.",
     icon: Leaf,
     image: "/fallen-timber/gallery/fallen-timber-27.jpg",
     href: "/services#tree-trimming",
