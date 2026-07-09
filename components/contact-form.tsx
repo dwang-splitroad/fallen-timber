@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -26,6 +26,8 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [selectedService, setSelectedService] = useState("")
+  // Timestamp when the form first rendered — used to reject instant (bot) submits.
+  const renderedAt = useRef(Date.now())
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -41,6 +43,9 @@ export function ContactForm() {
       desiredTime: (form.elements.namedItem("desiredTime") as HTMLInputElement).value,
       address: (form.elements.namedItem("address") as HTMLInputElement).value,
       details: (form.elements.namedItem("details") as HTMLTextAreaElement).value,
+      // Anti-spam fields
+      website: (form.elements.namedItem("website") as HTMLInputElement).value, // honeypot
+      elapsedMs: Date.now() - renderedAt.current,
     }
 
     try {
@@ -87,6 +92,21 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot — hidden from users, bots tend to fill it. Do not remove. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+      >
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Your Name */}
       <div className="space-y-2">
         <Label htmlFor="name">Your Name</Label>
