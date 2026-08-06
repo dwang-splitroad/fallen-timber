@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import sgMail from "@sendgrid/mail"
+import { scoreSubmission } from "@/lib/spam-filter"
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
@@ -92,6 +93,9 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    // 4. Content scoring — catches lead-gen spam that fills the form correctly.
+    const verdict = scoreSubmission({ name, phone, email, address, details })
+
     const serviceLabel: Record<string, string> = {
       "tree-removal": "Tree Removal",
       "tree-topping": "Tree Topping",
@@ -144,6 +148,39 @@ export async function POST(req: NextRequest) {
         </p>
       </div>
     `
+
+    // Blocklisted senders are dropped on the floor — no email at all. The
+    // blocklist only holds identifiers a real customer could never match.
+    if (verdict.isBlocked) {
+      console.warn(`Contact form BLOCKED from ${ip}:`, verdict.reasons)
+      return NextResponse.json({ success: true })
+    }
+
+    // Flagged submissions never reach the crew. They go to the quarantine
+    // address only, so a false positive can still be recovered by hand.
+    if (verdict.isSpam) {
+      console.warn(`Contact form flagged as spam (score ${verdict.score}):`, verdict.reasons)
+
+      await sgMail.send({
+        to: { name: "Dennis Wang", email: "dennis@splitroadmedia.com" },
+        from: { name: "Fallen Timber Specialists", email: "website@fallen-timber.com" },
+        subject: `[FILTERED SPAM] Quote Request from ${name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <p style="background: #fff3cd; border-left: 4px solid #cc9a06; padding: 12px; font-size: 14px;">
+              <strong>Blocked before reaching Clayton and Alex.</strong><br>
+              Spam score: ${verdict.score}<br>
+              Reasons: ${escapeHtml(verdict.reasons.join("; "))}<br>
+              Source IP: ${escapeHtml(ip)} &mdash; add to the Vercel firewall if it repeats.
+            </p>
+            ${html}
+          </div>
+        `,
+      })
+
+      // Report success so the sender gets no feedback to tune against.
+      return NextResponse.json({ success: true })
+    }
 
     await sgMail.send({
       to: { name: "Clayton Folk", email: "clayton@fallen-timber.com" },
